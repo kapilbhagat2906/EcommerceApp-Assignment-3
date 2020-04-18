@@ -1,0 +1,52 @@
+$base-selector: '.product-list';
+
+$product-list-border-color: #d3d3d3;
+$product-list-view-options-icon-color: #a3a3a3;
+
+#{$base-selector} {
+    width: 1024px;
+    margin: auto;
+    border: 2px solid $product-list-border-color;
+
+    &_card {
+        box-sizing: border-box;
+    }
+
+    &_card-grid {
+        width: 25%;
+        display: inline-block;
+        padding: 40px;
+    }
+
+    &_card-list {
+        width: 100%;
+        padding: 40px;
+        display: inline-block;
+    }
+
+    &_controls {
+        padding: 40px 20px;
+        text-align: right;
+
+        &_view-options {
+            font-size: 25px;
+            margin: 0 10px;
+            vertical-align: middle;
+
+            * {
+                margin: 0 10px;
+                cursor: pointer;
+                color: $product-list-view-options-icon-color;
+
+                &.active {
+                    color: black;
+                }
+            }
+        }
+
+        &_sort-options {
+            vertical-align: middle;
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<div class="product-card" [ngClass]="['product-card_' + viewType]">
+    <img class="product-card_image" [src]="productInfo.thumbnailUrl" [alt]="productInfo.title" />
+    <div class="product-card_details">
+        <div class="product-card_details_desc">{{productInfo.title.substring(0, 35) | titlecase}}</div>
+        <div class="product-card_details_price">{{productInfo.price | currency: 'INR'}}</div>
+    </div>
+</div>

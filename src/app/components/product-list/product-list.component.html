@@ -1,0 +1,14 @@
+<div class="product-list">
+    <div class="product-list_controls">
+        <span class="product-list_controls_view-options">
+            <fa-icon [icon]="gridIcon" [ngClass]="{'active': viewType === 'grid'}" (click)="updateView('grid')"></fa-icon>
+            <fa-icon [icon]="listIcon" [ngClass]="{'active': viewType === 'list'}" (click)="updateView('list')"></fa-icon>
+        </span>
+        <select (change)="sort($event)" class="product-list_controls_sort-options" [(ngModel)]="sortOrder">
+            <option *ngFor="let option of sortOptions" [value]="option.value">{{option.label}}</option>
+        </select>
+    </div>
+    <app-product-card class="product-list_card" [view]="viewType" [ngClass]= "{'product-list_card-grid': viewType === 'grid', 'product-list_card-list': viewType === 'list'}"
+        *ngFor="let product of products | async | sort: sortOrder" [productInfo]="product">
+    </app-product-card>
+</div>

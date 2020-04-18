@@ -1,0 +1,41 @@
+$base-selector: '.product-card';
+
+#{$base-selector} {
+    &_details {
+        &_desc {
+            font-size: 18px;
+            padding-top: 10px;
+        }
+        &_price {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 10px;
+        }
+    }
+
+    &_grid {
+        #{$base-selector} {
+            &_image {
+                width: 100%;
+            }
+        }
+    }
+
+    &_list {
+        #{$base-selector} {
+            &_image {
+                width: 30%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &_details {
+                width: 70%;
+                display: inline-block;
+                vertical-align: middle;
+                padding-left: 40px;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
